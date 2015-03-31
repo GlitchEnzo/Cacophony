@@ -1,0 +1,9 @@
+# Ignore the obj folder
+obj/
+
+# Ignore the temporary Visual Studio files
+*.user
+*.suo
+
+# Ignore Notepad++ backup files
+*.bak
