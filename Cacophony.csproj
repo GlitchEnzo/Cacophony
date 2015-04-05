@@ -17,7 +17,6 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.css" />
     <Content Include="Cacophony.css" />
     <Content Include="index.html" />
     <Content Include="songs.xml" />
@@ -25,7 +24,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Album.ts" />
-    <TypeScriptCompile Include="app.ts" />
     <None Include="Artist.ts" />
     <None Include="AudioPlayer.ts" />
     <TypeScriptCompile Include="Cacophony.ts" />
