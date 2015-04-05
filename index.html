@@ -2,14 +2,50 @@
 
 <html lang="en">
 <head>
+    <!-- Default to UTF-8 encoding. -->
     <meta charset="utf-8" />
-    <title>TypeScript HTML App</title>
-    <link rel="stylesheet" href="app.css" type="text/css" />
-    <script src="app.js"></script>
+
+    <!-- Set the viewport to fill a mobile device screen, without overflowing out of it. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1, minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- Allow it to launch fullscreen when added to the Android home screen. -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Allow it to launch fullscreen when added to the iOS home screen. -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Set the title of the page that appears in the browser tab. -->
+    <title>Cacophony!</title>
+
+    <!-- Load the Cascading Style Sheet. -->
+    <link rel="stylesheet" href="Cacophony.css" type="text/css" />
+
+    <!-- Load all of the required JavaScript files. -->
+    <script src="Cacophony.js"></script>
 </head>
 <body>
-    <h1>TypeScript HTML App</h1>
+    <div id="header">
+        <div>
+            <button onclick="playlist.ViewAllGenres(true);">Genres</button>
+            <button onclick="playlist.ViewAllArtists(true);">Artists</button>
+            <button onclick="playlist.ViewAllAlbums(true);">Albums</button>
+            <button onclick="playlist.ViewAllSongs(true);">Songs</button>
+            <a id="currentFolder" style="color:white;">Location</a>
+        </div>
+    </div>
 
-    <div id="content"></div>
+    <div id="scroller">
+        <ul id="thelist" />
+    </div>
+
+    <div id="footer">
+        <div id="songTitle" style="margin: 0; padding: 0;">Title</div>
+        <input id="progressBar" type="range" value="0" oninput="player.ProgressBarChanged();" onchange="player.ProgressBarChanged();" />
+        <div>
+            <div id="prevButton" onclick="playPreviousSong();"></div>
+            <div id="playButton" onclick="playButtonClicked();"></div>
+            <div id="nextButton" onclick="playNextSong();"></div>
+        </div>
+    </div>
 </body>
 </html>

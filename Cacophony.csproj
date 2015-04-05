@@ -18,11 +18,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="Cacophony.css" />
     <Content Include="index.html" />
+    <Content Include="songs.xml" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Album.ts" />
     <TypeScriptCompile Include="app.ts" />
+    <None Include="Artist.ts" />
+    <None Include="AudioPlayer.ts" />
+    <TypeScriptCompile Include="Cacophony.ts" />
+    <None Include="Genre.ts" />
+    <None Include="Playlist.ts" />
+    <None Include="ProgressBar.ts" />
+    <None Include="Song.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">
@@ -64,6 +74,7 @@
     <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
     <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptOutFile>Cacophony.js</TypeScriptOutFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptTarget>ES5</TypeScriptTarget>

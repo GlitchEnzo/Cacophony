@@ -19,7 +19,7 @@
         var onclick = function ()
         {
             // use global playlist object to queue up this song and all others at the same level
-            playlist.addToPlaylist(this);
+            playlist.AddToPlaylist(this);
         };
 
         // we must bind the click method to this Song object in order to make the "this" object in the handler point to this Song object
