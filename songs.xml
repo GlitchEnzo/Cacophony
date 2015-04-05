@@ -1,12 +1,12 @@
 <Songs>
-    <Song genre="Ska" artist="Five Iron Frenzy" album="All the Hype that Money can Buy" track="01" title="The Greatest Story Ever Told" path="http://re-creationstudios.com/media/music/Ska/Five Iron Frenzy/All the Hype that Money can Buy/Five Iron Frenzy - The Greatest Story Ever Told.mp3"/>
-    <Song genre="Ska" artist="Rx Bandits" album="And The Battle Begun" track="01" title="Intro" path="http://re-creationstudios.com/media/music/Ska/Rx Bandits/And The Battle Begun/01 - Intro.mp3"/>
-    <Song genre="Ska" artist="Rx Bandits" album="And The Battle Begun" track="02" title="And The Battle Begun" path="http://re-creationstudios.com/media/music/Ska/Rx Bandits/And The Battle Begun/02 - And The Battle Begun.mp3"/>
-    <Song genre="Alternative" artist="Bjork" album="Vespertine" track="01" title="Hidden Place"  path="http://re-creationstudios.com/media/music/Alternative/Bjork/Vespertine/01_-_Hidden_Place.mp3"/>
-    <Song genre="Alternative" artist="Bjork" album="Vespertine" track="02" title="Cocoon" path="http://re-creationstudios.com/media/music/Alternative/Bjork/Vespertine/02_-_Cocoon.mp3"/>
-    <Song genre="Alternative" artist="Bjork" album="Volta" track="01" title="Earth Intruders" path="http://re-creationstudios.com/media/music/Alternative/Bjork/Volta/01 Earth Intruders.mp3"/>
-    <Song genre="Alternative" artist="Bjork" album="Volta" track="02" title="Wanderlust" path="http://re-creationstudios.com/media/music/Alternative/Bjork/Volta/02 Wanderlust.mp3"/>
-    <Song genre="Alternative" artist="Gorillaz" album="Demon Days" track="01" title="Intro" path="http://re-creationstudios.com/media/music/Alternative/Gorillaz/Demon Days/01 - Intro.mp3"/>
-    <Song genre="Alternative" artist="Gorillaz" album="Demon Days" track="02" title="Last Living Souls" path="http://re-creationstudios.com/media/music/Alternative/Gorillaz/Demon Days/02 - Last Living Souls.mp3"/>
-    <Song genre="Electronica" artist="Ronald Jenkees" album="Disorganized Fun" track="01" title="Disorganized Fun" path="http://re-creationstudios.com/media/music/Electronica/Ronald Jenkees/Disorganized Fun/01._Ronald_Jenkees_-_Disorganized_Fun.mp3"/>
+    <Song genre="Ska" artist="Five Iron Frenzy" album="All the Hype that Money can Buy" track="01" title="The Greatest Story Ever Told" path="http://recstu.com/media/audio/Ska/Five Iron Frenzy/All the Hype that Money can Buy/Five Iron Frenzy - The Greatest Story Ever Told.mp3"/>
+    <Song genre="Ska" artist="Rx Bandits" album="And The Battle Begun" track="01" title="Intro" path="http://recstu.com/media/audio/Ska/Rx Bandits/And The Battle Begun/01 - Intro.mp3"/>
+    <Song genre="Ska" artist="Rx Bandits" album="And The Battle Begun" track="02" title="And The Battle Begun" path="http://recstu.com/media/audio/Ska/Rx Bandits/And The Battle Begun/02 - And The Battle Begun.mp3"/>
+    <Song genre="Alternative" artist="Bjork" album="Vespertine" track="01" title="Hidden Place"  path="http://recstu.com/media/audio/Alternative/Bjork/Vespertine/01_-_Hidden_Place.mp3"/>
+    <Song genre="Alternative" artist="Bjork" album="Vespertine" track="02" title="Cocoon" path="http://recstu.com/media/audio/Alternative/Bjork/Vespertine/02_-_Cocoon.mp3"/>
+    <Song genre="Alternative" artist="Bjork" album="Volta" track="01" title="Earth Intruders" path="http://recstu.com/media/audio/Alternative/Bjork/Volta/01 Earth Intruders.mp3"/>
+    <Song genre="Alternative" artist="Bjork" album="Volta" track="02" title="Wanderlust" path="http://recstu.com/media/audio/Alternative/Bjork/Volta/02 Wanderlust.mp3"/>
+    <Song genre="Alternative" artist="Gorillaz" album="Demon Days" track="01" title="Intro" path="http://recstu.com/media/audio/Alternative/Gorillaz/Demon Days/01 - Intro.mp3"/>
+    <Song genre="Alternative" artist="Gorillaz" album="Demon Days" track="02" title="Last Living Souls" path="http://recstu.com/media/audio/Alternative/Gorillaz/Demon Days/02 - Last Living Souls.mp3"/>
+    <Song genre="Electronica" artist="Ronald Jenkees" album="Disorganized Fun" track="01" title="Disorganized Fun" path="http://recstu.com/media/audio/Electronica/Ronald Jenkees/Disorganized Fun/01._Ronald_Jenkees_-_Disorganized_Fun.mp3"/>
 </Songs>

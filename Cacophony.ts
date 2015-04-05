@@ -68,17 +68,10 @@ function playButtonClicked()
 
 function playPreviousSong()
 {
-    var song = playlist.GetPrevSong();
-    var parts = song.path.split("/");
+    var songPath = playlist.GetPrevSong();
+    var parts = songPath.split("/");
     songTitle.innerHTML = parts[parts.length - 1];
-    player.PlaySong(song.path);
-}
-
-function playNextSong() {
-    var song = playlist.GetNextSong();
-    var parts = song.path.split("/");
-    songTitle.innerHTML = parts[parts.length - 1];
-    player.PlaySong(song.path);
+    player.PlaySong(songPath);
 }
 
 window.onload = () =>
@@ -94,10 +87,9 @@ window.onload = () =>
     window.scrollTo(0, 1);
 
     player = new AudioPlayer();
-    player.PlayNextSong = playNextSong;
+    //player.PlayNextSong = playNextSong;
 
     playlist = new Playlist("songs.xml");
-    //playlist.PlayNextSong = playNextSong;
 
     // The size of the header and footer are fixed.  The list should take up all remaining space.
     thelist.style.height = window.innerHeight - header.clientHeight - footer.clientHeight + "px";

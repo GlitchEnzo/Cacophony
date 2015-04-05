@@ -13,12 +13,10 @@
      */
     currentSongIndex = 0;
 
-    //baseDirectory = "http://www.yourwebsite.com/base/directory/for/all/music";
-
     /**
      * The actual playlist of songs queued up to play. 
      */
-    playlist: Song[] = [];
+    playlist: string[] = [];
 
     constructor(xmlFilePath: string)
     {
@@ -51,7 +49,7 @@
                 song.title = xmlDoc.childNodes[0].childNodes[i].attributes.getNamedItem("title").value;
                 song.path = xmlDoc.childNodes[0].childNodes[i].attributes.getNamedItem("path").value;
                 
-                console.log("Loaded song: " + song.title);
+                //console.log("Loaded song: " + song.path);
 
                 // Add to all songs list
                 this.songs.push(song);
@@ -156,7 +154,8 @@
 
         thelist.innerHTML = "";
 
-        for (var genreItem in this.genres) {
+        for (var genreItem in this.genres)
+        {
             // genreItem is just the NAME of the genre, which should be used as a key
             var listItem = this.genres[genreItem].CreateListItem();
             thelist.appendChild(listItem);
@@ -258,7 +257,7 @@
         {
             //console.log(i);
 
-            var songPath = thelist.childNodes[i].attributes["data-path"];
+            var songPath: string = thelist.childNodes[i].attributes.getNamedItem("data-path").value;
 
             // if the current node is the one that was clicked, then mark it as the current song (-1 since getNextSong auto increments by 1)
             if (songPath == song.path)
@@ -270,7 +269,6 @@
         }
 
         // automatically start playing the song that was clicked
-        //this.PlayNextSong();
         player.PlayNextSong();
     }
 } 

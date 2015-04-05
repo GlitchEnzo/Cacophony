@@ -33,18 +33,19 @@ class AudioPlayer
      */
     PlayNextSong()
     {
-        var song = playlist.GetNextSong();
-        var parts = song.path.split("/");
+        var songPath = playlist.GetNextSong();
+        //console.log(songPath);
+        var parts = songPath.split("/");
         songTitle.innerHTML = parts[parts.length - 1];
-        player.PlaySong(song.path);
+        player.PlaySong(songPath);
 
         //playButton.src = "controls/pause.png";
     }
 
-    SetEndedHandler(handler) 
-    {
-        this.PlayNextSong = handler;
-    }
+    //SetEndedHandler(handler) 
+    //{
+    //    this.PlayNextSong = handler;
+    //}
 
     SongEnded() 
     {
