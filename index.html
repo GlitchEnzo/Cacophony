@@ -42,7 +42,7 @@
         <div id="songTitle" style="margin: 0; padding: 0;">Title</div>
         <input id="progressBar" type="range" value="0" oninput="player.ProgressBarChanged();" onchange="player.ProgressBarChanged();" />
         <div>
-            <div id="prevButton" onclick="playPreviousSong();"></div>
+            <div id="prevButton" onclick="player.PlayPreviousSong();"></div>
             <div id="playButton" onclick="playButtonClicked();"></div>
             <div id="nextButton" onclick="player.PlayNextSong();"></div>
         </div>

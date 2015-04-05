@@ -34,7 +34,6 @@ class AudioPlayer
     PlayNextSong()
     {
         var songPath = playlist.GetNextSong();
-        //console.log(songPath);
         var parts = songPath.split("/");
         songTitle.innerHTML = parts[parts.length - 1];
         player.PlaySong(songPath);
@@ -42,10 +41,18 @@ class AudioPlayer
         //playButton.src = "controls/pause.png";
     }
 
-    //SetEndedHandler(handler) 
-    //{
-    //    this.PlayNextSong = handler;
-    //}
+    /**
+     * Plays the previous song in the playlist.
+     */
+    PlayPreviousSong()
+    {
+        var songPath = playlist.GetPrevSong();
+        var parts = songPath.split("/");
+        songTitle.innerHTML = parts[parts.length - 1];
+        player.PlaySong(songPath);
+
+        //playButton.src = "controls/pause.png";
+    }
 
     SongEnded() 
     {

@@ -66,14 +66,6 @@ function playButtonClicked()
     }
 }
 
-function playPreviousSong()
-{
-    var songPath = playlist.GetPrevSong();
-    var parts = songPath.split("/");
-    songTitle.innerHTML = parts[parts.length - 1];
-    player.PlaySong(songPath);
-}
-
 window.onload = () =>
 {
     thelist = document.getElementById('thelist');
@@ -87,8 +79,6 @@ window.onload = () =>
     window.scrollTo(0, 1);
 
     player = new AudioPlayer();
-    //player.PlayNextSong = playNextSong;
-
     playlist = new Playlist("songs.xml");
 
     // The size of the header and footer are fixed.  The list should take up all remaining space.

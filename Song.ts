@@ -11,7 +11,7 @@
     {
         var listItem = document.createElement("li");
 
-        listItem.innerHTML = "<div><img src=\"controls/music.png\"/> " + this.artist + " - " + this.track + " - " + this.title + "</div>";
+        listItem.innerHTML = "<div><img src=\"icons/music.png\"/> " + this.artist + " - " + this.track + " - " + this.title + "</div>";
 
         // store the path to the song on the list item itelf to let the player access it
         listItem.setAttribute("data-path", this.path);
