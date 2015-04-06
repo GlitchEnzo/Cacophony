@@ -87,10 +87,14 @@ class AudioPlayer
         if (this.audioElement.paused)
         {
             this.audioElement.play();
+
+            // change to pause button
         }
         else
         {
             this.audioElement.pause();
+
+            // change to play button
         }
     }
 } 

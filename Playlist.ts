@@ -11,7 +11,7 @@
     /**
      * The index in the playlist of the song that is currently playing. 
      */
-    currentSongIndex = 0;
+    currentSongIndex: number = 0;
 
     /**
      * The actual playlist of songs queued up to play. 
@@ -25,10 +25,6 @@
         // Artists --> List of Albums
         // Albums --> List of Songs
         // Songs --> Nothing
-
-        var unsortedGenres = {};
-        var unsortedArtists = {};
-        var unsortedAlbums = {};
 
         // load the songs XML file
         var xmlhttp = new XMLHttpRequest();
@@ -270,6 +266,40 @@
 
         // automatically start playing the song that was clicked
         player.PlayNextSong();
+    }
+
+    Search(query: string)
+    {
+        query = query.toLowerCase();
+
+        // push the state into the browser history so can navigate back to it
+        // if the current state is a search, then replace it to prevent a stack of search history
+        if (history.state != null && history.state.search)
+        {
+            //console.log("Replacing...");
+            history.replaceState({ search: query }, "Unused", null);
+        }
+        else
+        {
+            history.pushState({ search: query }, "Unused", null);
+        }
+        
+        currentFolder.innerHTML = "Search: " + query;
+
+        thelist.innerHTML = "";
+
+        for (var songItem in this.songs)
+        {
+            var song = this.songs[songItem];
+            if (song.genre.toLowerCase().indexOf(query) > -1 ||
+                song.title.toLowerCase().indexOf(query) > -1 ||
+                song.album.toLowerCase().indexOf(query) > -1 ||
+                song.artist.toLowerCase().indexOf(query) > -1)
+            {
+                //console.log("Found: " + song.title);
+                thelist.appendChild(song.CreateListItem());
+            }
+        }
     }
 } 
 

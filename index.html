@@ -31,6 +31,7 @@
             <button onclick="playlist.ViewAllAlbums(true);">Albums</button>
             <button onclick="playlist.ViewAllSongs(true);">Songs</button>
             <a id="currentFolder" style="color:white;">Location</a>
+            <input id="searchbox" type="text" size="21" maxlength="120" onkeydown="search(event)">
         </div>
     </div>
 
@@ -43,7 +44,7 @@
         <input id="progressBar" type="range" value="0" oninput="player.ProgressBarChanged();" onchange="player.ProgressBarChanged();" />
         <div>
             <div id="prevButton" onclick="player.PlayPreviousSong();"></div>
-            <div id="playButton" onclick="playButtonClicked();"></div>
+            <div id="playButton" onclick="player.Pause();"></div>
             <div id="nextButton" onclick="player.PlayNextSong();"></div>
         </div>
     </div>

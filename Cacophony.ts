@@ -15,6 +15,7 @@ var footer: HTMLElement;
 var songTitle: HTMLElement;
 var currentFolder: HTMLElement;
 var progressBar: HTMLInputElement;
+var searchbox: HTMLInputElement;
 
 // hook up the OnPopState event to handle when someone tries navigating back or forward in history
 window.onpopstate = (event) =>
@@ -52,18 +53,24 @@ window.onresize = () =>
     thelist.style.height = window.innerHeight - header.clientHeight - footer.clientHeight + "px";
 }
 
-function playButtonClicked()
+function search(event: KeyboardEvent)
 {
-    player.Pause();
-
-    if (player.audioElement.paused)
+    var query: string;
+    if (event.keyCode == 8) // Backspace
     {
-        // change to play button
+        query = searchbox.value.substr(0, searchbox.value.length - 1);
+    }
+    else if (event.keyCode == 13) // Enter
+    {
+        query = searchbox.value;
     }
     else
     {
-        // change to pause button
+        query = searchbox.value + String.fromCharCode(event.keyCode);
     }
+
+    console.log("Searching: " + query);
+    playlist.Search(query);
 }
 
 window.onload = () =>
@@ -74,6 +81,7 @@ window.onload = () =>
     songTitle = document.getElementById('songTitle');
     currentFolder = document.getElementById('currentFolder');
     progressBar = <HTMLInputElement>document.getElementById('progressBar');
+    searchbox = <HTMLInputElement>document.getElementById('searchbox');
 
     // hide the address bar on mobile
     window.scrollTo(0, 1);

@@ -11,15 +11,20 @@ body {
 #header {
 	background: linear-gradient(black, black, black, black, black, #00bbff);
 	padding: 0.3em 1em;
+    position: relative;
+}
+
+#searchbox {
+    right: 5px;
+    position: absolute;
 }
  
 #scroller {
-    /*position: absolute;*/
-        background: gray;
-        left: 0;
-        right: 0;
-        margin: 0;
-        padding: 0;
+    background: gray;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
 }
             
 #thelist {
