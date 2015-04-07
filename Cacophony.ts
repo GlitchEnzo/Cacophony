@@ -73,6 +73,13 @@ function search(event: KeyboardEvent)
     playlist.Search(query);
 }
 
+function searchClicked()
+{
+    if (searchbox.value == "Search") {
+        searchbox.value = "";
+    }
+}
+
 window.onload = () =>
 {
     thelist = document.getElementById('thelist');

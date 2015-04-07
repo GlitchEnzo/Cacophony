@@ -8,7 +8,7 @@
     /*
      * The list of artists associated with this genre.
      */
-    artists = new Array();
+    artists: Artist[] = new Array();
 
     CreateListItem()
     {

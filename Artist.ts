@@ -8,7 +8,7 @@
     /*
      * The list of albums associated with this artist.
      */
-    albums = new Array();
+    albums: Album[] = new Array();
 
     CreateListItem()
     {
