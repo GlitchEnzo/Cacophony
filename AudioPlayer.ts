@@ -62,19 +62,30 @@ class AudioPlayer
         //progressBar.max = 0;
     }
 
-    ProgressBarChanged() 
+    ProgressBarChanged()
     {
-        this.audioElement.currentTime = +progressBar.value;
+        try
+        {
+            console.log("Changing progress from " + this.audioElement.currentTime + " to " + progressBar.value);
+            this.audioElement.currentTime = +progressBar.value;
+            currentTime.innerText = this.ConvertSecondsToTime(this.audioElement.currentTime);
+        }
+        catch (e)
+        {
+            console.error("Error: " + e);
+        } 
     }
 
     CurrentTimeChanged() 
     {
         progressBar.value = this.audioElement.currentTime.toString();
+        currentTime.innerText = this.ConvertSecondsToTime(this.audioElement.currentTime);
     }
 
     DurationChanged() 
     {
         progressBar.max = this.audioElement.duration.toString();
+        duration.innerText = this.ConvertSecondsToTime(this.audioElement.duration);
     }
 
     Play() 
@@ -96,5 +107,23 @@ class AudioPlayer
 
             // change to play button
         }
+    }
+
+     /**
+     * Creates a string representation of a time duration from a given number of seconds.
+     * For example: 121 passed in will return "2:01"
+     * @param {int} seconds The number of seconds representing the time.
+     * @returns string} The stringified time, in the format "#:##".
+     */
+     private ConvertSecondsToTime(seconds: number) {
+        var secondsPart: string = Math.floor(seconds % 60).toString();
+        if (Math.floor(seconds % 60) < 10)
+            secondsPart = "0" + secondsPart;
+
+        var minutesPart = Math.floor(seconds / 60);
+
+        //TODO: Display hours?
+
+        return minutesPart + ":" + secondsPart;
     }
 } 

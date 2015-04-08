@@ -42,11 +42,17 @@
     <div id="footer">
         <div id="songTitle" style="margin: 0; padding: 0;">Title</div>
         <input id="progressBar" type="range" value="0" oninput="player.ProgressBarChanged();" onchange="player.ProgressBarChanged();" />
+        
         <div>
             <div id="prevButton" onclick="player.PlayPreviousSong();"></div>
             <div id="playButton" onclick="player.Pause();"></div>
             <div id="nextButton" onclick="player.PlayNextSong();"></div>
         </div>
     </div>
+    
+    <input id="volumeBar" type="range" value="100" max="100" oninput="player.VolumeBarChanged();" onchange="player.VolumeBarChanged();" />
+    
+    <div id="currentTime">0:00</div>
+    <div id="duration">0:00</div>
 </body>
 </html>
