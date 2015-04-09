@@ -31,6 +31,18 @@ window.onpopstate = (event) =>
         {
             playlist.ViewAllGenres(false);
         }
+        else if (event.state.viewAllArtists)
+        {
+            playlist.ViewAllArtists(false);
+        }
+        else if (event.state.viewAllAlbums)
+        {
+            playlist.ViewAllAlbums(false);
+        }
+        else if (event.state.viewAllSongs)
+        {
+            playlist.ViewAllSongs(false);
+        }
         else if (event.state.genre)
         {
             playlist.OpenGenre(event.state.genre);
@@ -42,6 +54,10 @@ window.onpopstate = (event) =>
         else if (event.state.album)
         {
             playlist.OpenAlbum(event.state.album);
+        }
+        else if (event.state.search)
+        {
+            playlist.Search(event.state.search, false);
         }
     }
     else if (playlist) // we should just default to show all genres
@@ -73,7 +89,7 @@ function search(event: KeyboardEvent)
     }
 
     console.log("Searching: " + query);
-    playlist.Search(query);
+    playlist.Search(query, true);
 }
 
 function searchClicked()

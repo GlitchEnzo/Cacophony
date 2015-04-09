@@ -158,11 +158,15 @@
         }
     }
 
-    ViewAllArtists()
+    ViewAllArtists(pushState: boolean)
     {
-        // push the state into the browser history so can navigate back to it
-        // pushState(stateObject, title, url)
-        history.pushState({ viewAllArtists: true }, "Unused", null);
+        if (pushState)
+        {
+            // push the state into the browser history so can navigate back to it
+            // pushState(stateObject, title, url)
+            history.pushState({ viewAllArtists: true }, "Unused", null);
+        }
+
         currentFolder.innerHTML = "All Artists";
 
         thelist.innerHTML = "";
@@ -175,11 +179,15 @@
         }
     }
 
-    ViewAllAlbums()
+    ViewAllAlbums(pushState: boolean)
     {
-        // push the state into the browser history so can navigate back to it
-        // pushState(stateObject, title, url)
-        history.pushState({ viewAllAlbums: true }, "Unused", null);
+        if (pushState)
+        {
+            // push the state into the browser history so can navigate back to it
+            // pushState(stateObject, title, url)
+            history.pushState({ viewAllAlbums: true }, "Unused", null);
+        }
+
         currentFolder.innerHTML = "All Albums";
 
         thelist.innerHTML = "";
@@ -192,11 +200,15 @@
         }
     }
 
-    ViewAllSongs()
+    ViewAllSongs(pushState: boolean)
     {
-        // push the state into the browser history so can navigate back to it
-        // pushState(stateObject, title, url)
-        history.pushState({ viewAllSongs: true }, "Unused", null);
+        if (pushState)
+        {
+            // push the state into the browser history so can navigate back to it
+            // pushState(stateObject, title, url)
+            history.pushState({ viewAllSongs: true }, "Unused", null);
+        }
+
         currentFolder.innerHTML = "All Songs";
 
         thelist.innerHTML = "";
@@ -268,22 +280,25 @@
         player.PlayNextSong();
     }
 
-    Search(query: string)
+    Search(query: string, pushState: boolean)
     {
         query = query.toLowerCase();
 
-        // push the state into the browser history so can navigate back to it
-        // if the current state is a search, then replace it to prevent a stack of search history
-        if (history.state != null && history.state.search)
+        if (pushState)
         {
-            //console.log("Replacing...");
-            history.replaceState({ search: query }, "Unused", null);
+            // push the state into the browser history so can navigate back to it
+            // if the current state is a search, then replace it to prevent a stack of search history
+            if (history.state != null && history.state.search)
+            {
+                //console.log("Replacing...");
+                history.replaceState({ search: query }, "Unused", null);
+            }
+            else
+            {
+                history.pushState({ search: query }, "Unused", null);
+            }
         }
-        else
-        {
-            history.pushState({ search: query }, "Unused", null);
-        }
-        
+
         currentFolder.innerHTML = "Search: " + query;
 
         thelist.innerHTML = "";
