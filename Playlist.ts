@@ -288,15 +288,39 @@
 
         thelist.innerHTML = "";
 
+        // find any related genres
+        for (var genreItem in this.genres)
+        {
+            if (genreItem.toLowerCase().indexOf(query) > -1)
+            {
+                thelist.appendChild(this.genres[genreItem].CreateListItem());
+            }
+        }
+
+        // find any related artists
+        for (var artistItem in this.artists)
+        {
+            if (artistItem.toLowerCase().indexOf(query) > -1)
+            {
+                thelist.appendChild(this.artists[artistItem].CreateListItem());
+            }
+        }
+
+        // find any related albums
+        for (var albumItem in this.albums)
+        {
+            if (albumItem.toLowerCase().indexOf(query) > -1)
+            {
+                thelist.appendChild(this.albums[albumItem].CreateListItem());
+            }
+        }
+
+        // find any related songs
         for (var songItem in this.songs)
         {
             var song = this.songs[songItem];
-            if (song.genre.toLowerCase().indexOf(query) > -1 ||
-                song.title.toLowerCase().indexOf(query) > -1 ||
-                song.album.toLowerCase().indexOf(query) > -1 ||
-                song.artist.toLowerCase().indexOf(query) > -1)
+            if (song.title.toLowerCase().indexOf(query) > -1)
             {
-                //console.log("Found: " + song.title);
                 thelist.appendChild(song.CreateListItem());
             }
         }
