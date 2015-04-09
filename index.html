@@ -30,7 +30,7 @@
             <button onclick="playlist.ViewAllArtists(true);">Artists</button>
             <button onclick="playlist.ViewAllAlbums(true);">Albums</button>
             <button onclick="playlist.ViewAllSongs(true);">Songs</button>
-            <a id="currentFolder" style="color:white;">Location</a>
+            <a id="currentFolder">Location</a>
             <input id="searchbox" type="text" value="Search" size="21" maxlength="120" onkeydown="search(event)" onclick="searchClicked();">
         </div>
     </div>
@@ -40,7 +40,7 @@
     </div>
 
     <div id="footer">
-        <div id="songTitle" style="margin: 0; padding: 0;">Title</div>
+        <div id="songTitle">Title</div>
         <input id="progressBar" type="range" value="0" oninput="player.ProgressBarChanged();" onchange="player.ProgressBarChanged();" />
         
         <div>

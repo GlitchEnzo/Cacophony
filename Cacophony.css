@@ -21,6 +21,10 @@ body {
     position: relative;
 }
 
+#currentFolder {
+    color: white;
+}
+
 #searchbox {
     right: 5px;
     position: absolute;
