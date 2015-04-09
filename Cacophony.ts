@@ -18,6 +18,7 @@ var progressBar: HTMLInputElement;
 var searchbox: HTMLInputElement;
 var currentTime: HTMLElement;
 var duration: HTMLElement;
+var volumeBar: HTMLInputElement;
 
 // hook up the OnPopState event to handle when someone tries navigating back or forward in history
 window.onpopstate = (event) =>
@@ -93,6 +94,7 @@ window.onload = () =>
     searchbox = <HTMLInputElement>document.getElementById('searchbox');
     currentTime = document.getElementById('currentTime');
     duration = document.getElementById('duration');
+    volumeBar = <HTMLInputElement>document.getElementById('volumeBar');
 
     // hide the address bar on mobile
     window.scrollTo(0, 1);

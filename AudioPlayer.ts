@@ -66,7 +66,7 @@ class AudioPlayer
     {
         try
         {
-            console.log("Changing progress from " + this.audioElement.currentTime + " to " + progressBar.value);
+            //console.log("Changing progress from " + this.audioElement.currentTime + " to " + progressBar.value);
             this.audioElement.currentTime = +progressBar.value;
             currentTime.innerText = this.ConvertSecondsToTime(this.audioElement.currentTime);
         }
@@ -86,6 +86,11 @@ class AudioPlayer
     {
         progressBar.max = this.audioElement.duration.toString();
         duration.innerText = this.ConvertSecondsToTime(this.audioElement.duration);
+    }
+
+    VolumeBarChanged()
+    {
+        this.audioElement.volume = +volumeBar.value / 100.0;
     }
 
     Play() 
