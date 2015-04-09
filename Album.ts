@@ -23,7 +23,7 @@ class Album
     {
         var listItem = document.createElement("li");
 
-        listItem.innerHTML = "<div><img src=\"icons/folder.png\"/> " + this.name + " [" + this.artist + "] (" + this.songs.length + " songs)</div>";
+        listItem.innerHTML = "<div><img src=\"icons/album.png\"/> " + this.name + " [" + this.artist + "] (" + this.songs.length + " songs)</div>";
 
         var onclick = function () { this.Open(true); };
 

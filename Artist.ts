@@ -14,7 +14,7 @@
     {
         var listItem = document.createElement("li");
 
-        listItem.innerHTML = "<div><img src=\"icons/folder.png\"/> " + this.name + " (" + this.albums.length + " albums)</div>";
+        listItem.innerHTML = "<div><img src=\"icons/artist.png\"/> " + this.name + " (" + this.albums.length + " albums)</div>";
 
         var onclick = function () { this.Open(true); };
 
