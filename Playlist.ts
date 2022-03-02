@@ -31,29 +31,29 @@
         xmlhttp.open("GET", xmlFilePath, false);
         xmlhttp.send();
         var xmlDoc = xmlhttp.responseXML;
+        var songsElement = xmlDoc.firstElementChild;
+        //var allSongs = songsElement.getElementsByClassName("Song");
+        var allSongs = songsElement.children;
 
         // parse the XML list of songs
-        for (var i = 0; i < xmlDoc.childNodes[0].childNodes.length; i++)
+        for (var i = 0; i < allSongs.length; i++)
         {
-            if (xmlDoc.childNodes[0].childNodes[i].nodeName == "Song")
-            {
-                var song = new Song();
-                song.genre = xmlDoc.childNodes[0].childNodes[i].attributes.getNamedItem("genre").value;
-                song.artist = xmlDoc.childNodes[0].childNodes[i].attributes.getNamedItem("artist").value;
-                song.album = xmlDoc.childNodes[0].childNodes[i].attributes.getNamedItem("album").value;
-                song.track = xmlDoc.childNodes[0].childNodes[i].attributes.getNamedItem("track").value;
-                song.title = xmlDoc.childNodes[0].childNodes[i].attributes.getNamedItem("title").value;
-                song.path = xmlDoc.childNodes[0].childNodes[i].attributes.getNamedItem("path").value;
+            var song = new Song();
+            song.genre = allSongs[i].attributes.getNamedItem("genre").value;
+            song.artist = allSongs[i].attributes.getNamedItem("artist").value;
+            song.album = allSongs[i].attributes.getNamedItem("album").value;
+            song.track = allSongs[i].attributes.getNamedItem("track").value;
+            song.title = allSongs[i].attributes.getNamedItem("title").value;
+            song.path = allSongs[i].attributes.getNamedItem("path").value;
                 
-                //console.log("Loaded song: " + song.path);
+            //console.log("Loaded song: " + song.path);
 
-                // Add to all songs list
-                this.songs.push(song);
+            // Add to all songs list
+            this.songs.push(song);
 
-                //var listItem = document.createElement("li");
-                //listItem.innerHTML = "<div onclick=\"playlist.addToPlaylist(playlist.currentFolderNode.childNodes[" + i + "])\"><img src=\"controls/music.png\"/> " + folderNode.childNodes[i].getAttribute("name") + "</div>";
-                //thelist.appendChild(listItem);
-            }
+            //var listItem = document.createElement("li");
+            //listItem.innerHTML = "<div onclick=\"playlist.addToPlaylist(playlist.currentFolderNode.childNodes[" + i + "])\"><img src=\"controls/music.png\"/> " + folderNode.childNodes[i].getAttribute("name") + "</div>";
+            //thelist.appendChild(listItem);
         }
 
         // sort all of the songs into alphabetical order
@@ -261,11 +261,11 @@
         // clear the playlist
         this.playlist.length = 0;
 
-        for (var i = 0; i < thelist.childNodes.length; i++)
+        for (var i = 0; i < thelist.children.length; i++)
         {
             //console.log(i);
 
-            var songPath: string = thelist.childNodes[i].attributes.getNamedItem("data-path").value;
+            var songPath: string = thelist.children[i].attributes.getNamedItem("data-path").value;
 
             // if the current node is the one that was clicked, then mark it as the current song (-1 since getNextSong auto increments by 1)
             if (songPath == song.path)
